@@ -1,13 +1,270 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: black;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  padding-block: 6px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 130, 231, 1) 0%,
+    rgba(0, 212, 255, 1) 90%
+  );
+}
+
+header .site-logo {
+  color: white;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 5px 20px;
+}
+
+header a:hover {
+  color: #3f82e7;
+  text-decoration: underline;
+}
+
+footer {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 130, 231, 1) 0%,
+    rgba(0, 212, 255, 1) 90%
+  );
+  color: white;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+/*** ABOUT PAGE ***/
+.about-hero-image {
+  max-width: 100%;
+}
+
+.about-page-content {
+  padding-inline: 23px;
+  color: black;
+  margin-bottom: 55px;
+}
+
+.about-page-content h1 {
+  line-height: 38px;
+}
+
+.about-page-header {
+}
+
+.about-page-content p {
+  line-height: 22px;
+}
+
+.about-page-cta {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 130, 231, 1) 0%,
+    rgba(0, 212, 255, 1) 90%
+  );
+  color: white;
+  padding-inline: 32px;
+  padding-top: 1px;
+  padding-bottom: 32px;
+  margin-inline: 97px;
+  border-radius: 5px;
+  text-align: center;
+  font-style: italic;
+}
+
+.about-page-cta h2 {
+  margin: 0;
+  padding-block: 37px;
+}
+
+.about-page-cta .link-button {
+  border: solid white 2px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-style: italic;
+  padding: 5px;
+}
+
+.host-nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.sneaker-list-container {
+}
+
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+  margin-right: 15px;
+}
+
+.sneaker-list-container img {
+  max-width: 100%;
+  padding: 25px 10px 0px 10px;
+}
+
+.sneaker-list-container img:first-child {
+  padding: 10px 0px 0px 0px;
+}
+
+.shoe-tile {
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.shoe-tile a {
+  color: #161616;
+  text-decoration: none;
+}
+
+.shoe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 10px;
+  margin-top: 57px;
+  padding: 20px;
+  background-color: white;
+}
+
+/* .sneaker-filters a {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: #cdf2fa;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+} */
+
+.sneaker-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.sneaker-list-filter-buttons > a {
+  margin-right: 15px;
+}
+
+.van-type {
+  height: 34px;
+  margin-top: 20px;
+  padding: 6px 26px;
+  font-style: italic;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #cdf2fa;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.van-type:hover {
+  color: #ffead0;
+}
+
+.van-type:focus {
+  outline: none;
+}
+
+.van-type.selected {
+  color: #ffead0;
+}
+
+.van-type.all-sneakers:hover,
+.van-type.all-sneakers.selected {
+  background-color: #115e59;
+}
+
+.van-type.air-jordan:hover,
+.van-type.air-jordan.selected {
+  background-color: #115e59;
+}
+
+.van-type.nike:hover,
+.van-type.nike.selected {
+  background-color: #115e59;
+}
+
+.van-type.yeezy:hover,
+.van-type.yeezy.selected {
+  background-color: #115e59;
+}
+
+.van-type.adidas:hover,
+.van-type.adidas.selected {
+  background-color: #115e59;
+}
+
+.van-type.clear-filters {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+i[class*="van-type-"] {
+  padding: 7px 14px;
 }
