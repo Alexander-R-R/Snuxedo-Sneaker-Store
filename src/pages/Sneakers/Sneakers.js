@@ -1,31 +1,27 @@
 import React from "react";
 import {
-    Link,
-    useSearchParams,
-    useLoaderData,
-    defer,
-    Await
-} from "react-router-dom"
-
+  Link,
+  useSearchParams,
+  useLoaderData,
+  defer,
+  Await,
+} from "react-router-dom";
+import { getShoes } from "../../api";
 
 export function loader() {
-
+  return defer({ shoes: getShoes() });
 }
 
 export default function Sneakers() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const dataPromise = useLoaderData();
+  const typeFilter = searchParams.get("type");
 
-    const [searchParams, setSearchParams] = useSearchParams();
-    const dataPromise = useLoaderData();
-    const typeFilter = searchParams.get("type");
-  
-    React.useEffect(() => {
-      fetch("/api/sneakers")
-        .then((res) => res.json())
-        .then((data) => setShoesData(data.shoes));
-    }, []);
+  function renderShoeElements(shoes) {
+    const displayedShoes = typeFilter
+      ? shoesData.filter((shoe) => shoe.type === typeFilter)
+      : shoesData;
 
-    const displayedShoes = typeFilter ? shoesData.filter(shoe => shoe.type === typeFilter) : shoesData
-  
     const shoesElements = displayedShoes.map((shoe) => (
       <div key={shoe.id} className="shoe-tile">
         <Link to={`/sneakers/${shoe.id}`}>
@@ -41,38 +37,58 @@ export default function Sneakers() {
         </Link>
       </div>
     ));
-  
+
     return (
       <div className="sneaker-list-container">
-          <img src={SneakersBanner} className="sneakers-banner"/>
-          <div className="sneaker-list-filter-buttons">
-              <Link 
-                  to="."
-                  className="van-type all-sneakers"
-              >All Sneakers</Link>
-              <Link 
-                  to="?type=air-jordan"
-                  className="van-type air-jordan"
-              >Air Jordan</Link>
-              <Link 
-                  to="?type=nike"
-                  className="van-type nike"
-              >Nike</Link>
-              <Link 
-                  to="?type=yeezy"
-                  className="van-type yeezy"
-              >Yeezy</Link>
-              <Link 
-                  to="?type=adidas"
-                  className="van-type adidas"
-              >Adidas</Link>
-          
-          </div>
+        <img src={SneakersBanner} className="sneakers-banner" />
+        <div className="sneaker-list-filter-buttons">
+          <button to="." className="van-type all-sneakers">
+            All Sneakers
+          </button>
+          <button
+            onClick={() => handleFilterChange("type", "air-jordan")}
+            className={`shoe-type air-jordan ${
+              typeFilter === "air-jordan" ? "selected" : ""
+            }`}
+          >
+            Air Jordan
+          </button>
+          <button
+            onClick={() => handleFilterChange("type", "nike")}
+            className={`shoe-type air-jordan ${
+              typeFilter === "nike" ? "selected" : ""
+            }`}
+          >
+            Nike
+          </button>
+          <button
+            onClick={() => handleFilterChange("type", "yeezy")}
+            className={`shoe-type yeezy ${
+              typeFilter === "yeezy" ? "selected" : ""
+            }`}
+          >
+            Yeezy
+          </button>
+          <button
+            onClick={() => handleFilterChange("type", "adidas")}
+            className={`shoe-type adidas ${
+              typeFilter === "adidas" ? "selected" : ""
+            }`}
+          >
+            Adidas
+          </button>
+        </div>
         <div className="shoe-list">{shoesElements}</div>
       </div>
     );
-  
+  }
+
+  return (
+    <div className="shoe-list-container">
+      <h1>Explore our sneaker options</h1>
+      <React.Suspense fallback={<h2>Loading sneakers ...</h2>}>
+        <Await resolve={dataPromise.shoes}>{renderShoeElements}</Await>
+      </React.Suspense>
+    </div>
+  )
 }
-
-
-
