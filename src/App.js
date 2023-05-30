@@ -12,7 +12,6 @@ import Home from "./pages/Home";
 import Sneakers, {loader as loaderSneakers} from "./pages/Sneakers/./Sneakers";
 import About from "./pages/About";
 import BuyerSeller from "./pages/Buyer-Seller";
-import AllSneakers from "./pages/Sneakers/AllSneakers";
 import SneakersLayout from "./components/SneakersLayout";
 import SneakerDetails, {
   loader as loaderSneakerDetails,

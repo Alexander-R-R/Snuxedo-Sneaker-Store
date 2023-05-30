@@ -174,7 +174,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   gap: 10px;
-  margin-top: 57px;
+  margin-top: 5px;
   padding: 20px;
   background-color: white;
 }
@@ -210,6 +210,11 @@ footer {
   color: #4d4d4d;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+}
+
+.sneaker-list-filter-buttons button:hover {
+  background-color: #115e59;
+  color: #ffead0;
 }
 
 .sneaker-list-filter-buttons > a {
@@ -267,4 +272,59 @@ footer {
 
 i[class*="van-type-"] {
   padding: 7px 14px;
+}
+
+
+.shoe-detail-container {
+  padding-inline: 27px;
+}
+
+.shoe-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+.shoe-detail-container .back-button:visited {
+  
+}
+
+.shoe-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+.shoe-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+.shoe-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+}
+
+.shoe-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.shoe-detail > i {
+  align-self: flex-start;
+}
+
+.shoe-detail .van-price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.shoe-detail .van-price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.shoe-detail .link-button {
+  background-color: #FF8C38;
+  color: white;
+  font-size: 1.125rem;
 }

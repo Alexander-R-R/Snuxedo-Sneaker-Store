@@ -60,37 +60,41 @@ export default function Sneakers() {
         <div className="sneaker-list-container">
           <img src={SneakersBanner} className="sneakers-banner" />
           <div className="sneaker-list-filter-buttons">
-            <button to="." className="van-type all-sneakers">
+            <button 
+            onClick={() => handleFilterChange("type", "")}
+            className={`shoe-type air-jordan ${
+              typeFilter === "" ? "selected" : ""
+            }`}>
               All Sneakers
             </button>
             <button
-              onClick={() => handleFilterChange("type", "air-jordan")}
+              onClick={() => handleFilterChange("type", "Air Jordan")}
               className={`shoe-type air-jordan ${
-                typeFilter === "air-jordan" ? "selected" : ""
+                typeFilter === "Air Jordan" ? "selected" : ""
               }`}
             >
               Air Jordan
             </button>
             <button
-              onClick={() => handleFilterChange("type", "nike")}
+              onClick={() => handleFilterChange("type", "Nike")}
               className={`shoe-type air-jordan ${
-                typeFilter === "nike" ? "selected" : ""
+                typeFilter === "Nike" ? "selected" : ""
               }`}
             >
               Nike
             </button>
             <button
-              onClick={() => handleFilterChange("type", "yeezy")}
+              onClick={() => handleFilterChange("type", "Yeezy")}
               className={`shoe-type yeezy ${
-                typeFilter === "yeezy" ? "selected" : ""
+                typeFilter === "Yeezy" ? "selected" : ""
               }`}
             >
               Yeezy
             </button>
             <button
-              onClick={() => handleFilterChange("type", "adidas")}
+              onClick={() => handleFilterChange("type", "Adidas")}
               className={`shoe-type adidas ${
-                typeFilter === "adidas" ? "selected" : ""
+                typeFilter === "Adidas" ? "selected" : ""
               }`}
             >
               Adidas
@@ -104,7 +108,7 @@ export default function Sneakers() {
 
   return (
     <div className="shoe-list-container">
-      <h1>Explore our sneaker options</h1>
+
       <React.Suspense fallback={<h2>Loading sneakers ...</h2>}>
         <Await resolve={dataPromise.shoes}>{renderShoeElements}</Await>
       </React.Suspense>

@@ -15,16 +15,17 @@ export default function ShoeDetails() {
 
   function renderShoeDetails( shoe ) {
     return (
-      <div className="van-detail-container">
+      <div className="shoe-detail-container">
       <Link to={`..${search} `} relative="path" className="back-button">
         &larr; <span>Back to {type} sneakers</span>
       </Link>
   
-      <div className="van-detail">
+      <div className="shoe-detail">
         <img src={shoe.imageUrl} />
-        <i className={`van-type ${shoe.type} selected`}>{shoe.type}</i>
-        <p className="van-price">
-          <span>${shoe.price}</span>/day
+        <i className={`shoe-type ${shoe.type} selected`}>{shoe.type}</i>
+        <h2>{shoe.name}</h2>
+        <p className="shoe-price">
+          <span>${shoe.price}</span>
         </p>
         <p>{shoe.description}</p>
         <button className="link-button">Buy now</button>
