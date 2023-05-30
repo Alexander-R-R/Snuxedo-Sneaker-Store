@@ -311,6 +311,8 @@ createServer({
   routes() {
     this.namespace = "api";
     this.logging = false;
+    this.passthrough("https://firestore.googleapis.com/**")
+
 
     this.get("/sneakers", (schema, request) => {
       return schema.shoes.all();
