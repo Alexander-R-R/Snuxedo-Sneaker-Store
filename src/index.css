@@ -274,6 +274,7 @@ i[class*="van-type-"] {
   padding: 7px 14px;
 }
 
+/* SneakerDetails */
 
 .shoe-detail-container {
   padding-inline: 27px;
@@ -327,4 +328,22 @@ i[class*="van-type-"] {
   background-color: #FF8C38;
   color: white;
   font-size: 1.125rem;
+}
+
+.back-button {
+  height: 34px;
+  margin-top: 20px;
+  padding: 6px 26px;
+  font-style: italic;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #cdf2fa;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.back-button li {
+  text-decoration: none;
 }

@@ -16,10 +16,10 @@ export default function Header() {
                 Sneakers
                 </NavLink>
               <NavLink 
-                  to="/buyer-seller"
+                  to="/seller-space"
                   className={({isActive}) => isActive ? "active-link" : null}
               >
-                Buy/Sell
+                Seller Space
                 </NavLink>
               <NavLink 
                   to="/about"

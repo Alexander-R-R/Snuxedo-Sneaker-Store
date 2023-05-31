@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Sneakers, {loader as loaderSneakers} from "./pages/Sneakers/./Sneakers";
 import About from "./pages/About";
-import BuyerSeller from "./pages/Buyer-Seller";
+import Dashboard from "./pages/Seller Space/Dashboard";
 import SneakersLayout from "./components/SneakersLayout";
 import SneakerDetails, {
   loader as loaderSneakerDetails,
@@ -34,7 +34,7 @@ const router = createBrowserRouter(
         />
       {/* </Route> */}
       <Route path="/about" element={<About />} />
-      <Route path="/buyer-seller" element={<BuyerSeller />} />
+      <Route path="/buyer-seller" element={<Dashboard />} />
 
       <Route path="sneakers"></Route>
     </Route>
