@@ -16,19 +16,19 @@ export default function Dashboard() {
         console.log(shoes)
         const hostShoeEls = shoes.map((shoe) => (
             
-            <div className="host-van-single" key={van.id}>
-                <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
+            <div className="host-van-single" key={shoe.id}>
+                <img src={shoe.imageUrl} alt={`Photo of ${shoe.name}`} />
                 <div className="host-van-info">
-                    <h3>{van.name}</h3>
-                    <p>${van.price}/day</p>
+                    <h3>{shoe.name}</h3>
+                    <p>${shoe.price}/day</p>
                 </div>
-                <Link to={`vans/${van.id}`}>View</Link>
+                <Link to={`vans/${shoe.id}`}>View</Link>
             </div>
         ))
 
         return (
             <div className="host-vans-list">
-                <section>{hostVansEls}</section>
+                <section>{hostShoeEls}</section>
             </div>
         )
     }
@@ -56,7 +56,7 @@ export default function Dashboard() {
                     <Link to="vans">View all</Link>
                 </div>
                 <React.Suspense fallback={<h3>Loading...</h3>}>
-                    <Await resolve={dataPromise.vans}>{renderVanElements}</Await>
+                    <Await resolve={dataPromise.shoes}>{renderShoeElements}</Await>
                 </React.Suspense>
             </section>
         </>

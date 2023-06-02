@@ -9,10 +9,11 @@ import Layout from "./components/Layout";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Sneakers, {loader as loaderSneakers} from "./pages/Sneakers/./Sneakers";
+import Sneakers, {loader as loaderSneakers} from "./pages/Sneakers/Sneakers";
 import About from "./pages/About";
 import Dashboard from "./pages/Seller Space/Dashboard";
 import SneakersLayout from "./components/SneakersLayout";
+import SellerSpaceLayout from "./components/SellerSpaceLayout";
 import SneakerDetails, {
   loader as loaderSneakerDetails,
 } from "./pages/Sneakers/SneakerDetails";
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
-      {/* <Route path="sneakers" element={<SneakersLayout />}> */}
+      
         <Route 
         path="sneakers" 
         element={<Sneakers />} 
@@ -32,11 +33,18 @@ const router = createBrowserRouter(
           element={<SneakerDetails />}
           loader={loaderSneakerDetails}
         />
-      {/* </Route> */}
-      <Route path="/about" element={<About />} />
-      <Route path="/buyer-seller" element={<Dashboard />} />
+        <Route path="/seller-space" element={<SellerSpaceLayout />}>
+         <Route
+          index
+          element={<Dashboard />}
+          loade
+         />
 
-      <Route path="sneakers"></Route>
+      </Route> 
+      <Route path="/about" element={<About />} />
+      
+
+      
     </Route>
   )
 );
