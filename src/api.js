@@ -48,7 +48,7 @@ export async function getShoe(id) {
 //
 
 export async function getHostShoes() {
-  const q = query(shoesCollectionRef, where("hostId", "==", "123"))
+  const q = query(shoesCollectionRef, where("sellerId", "==", "123"))
   const querySnapshot = await getDocs(q)
   const dataArr = querySnapshot.docs.map(doc => ({
     ...doc.data(),

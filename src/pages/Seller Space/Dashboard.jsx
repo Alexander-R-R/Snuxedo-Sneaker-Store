@@ -16,18 +16,18 @@ export default function Dashboard() {
         console.log(shoes)
         const hostShoeEls = shoes.map((shoe) => (
             
-            <div className="host-van-single" key={shoe.id}>
+            <div className="sellerSpace-shoe-single" key={shoe.id}>
                 <img src={shoe.imageUrl} alt={`Photo of ${shoe.name}`} />
-                <div className="host-van-info">
+                <div className="sellerSpace-shoe-info">
                     <h3>{shoe.name}</h3>
                     <p>${shoe.price}/day</p>
                 </div>
-                <Link to={`vans/${shoe.id}`}>View</Link>
+                <Link to={`sneakers/${shoe.id}`}>View</Link>
             </div>
         ))
 
         return (
-            <div className="host-vans-list">
+            <div className="sellerSpace-shoe-list">
                 <section>{hostShoeEls}</section>
             </div>
         )
@@ -35,7 +35,7 @@ export default function Dashboard() {
 
     return (
         <>
-            <section className="host-dashboard-earnings">
+            <section className="sellerSpace-dashboard-earnings">
                 <div className="info">
                     <h1>Welcome!</h1>
                     <p>Income last <span>30 days</span></p>
@@ -43,14 +43,14 @@ export default function Dashboard() {
                 </div>
                 <Link to="income">Details</Link>
             </section>
-            <section className="host-dashboard-reviews">
+            <section className="sellerSpace-dashboard-reviews">
                 <h2>Review score</h2>
                 <p>
                     <span>5.0</span>/5
                 </p>
                 <Link to="reviews">Details</Link>
             </section>
-            <section className="host-dashboard-vans">
+            <section className="sellerSpace-dashboard-vans">
                 <div className="top">
                     <h2>Your listed vans</h2>
                     <Link to="vans">View all</Link>

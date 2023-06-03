@@ -10,7 +10,7 @@ export default function SellerSpaceLayout() {
   
       return (
           <>
-              <nav className="host-nav"> 
+              <nav className="sellerSpace-nav"> 
                 <NavLink 
                 to="."
                 end
@@ -28,7 +28,7 @@ export default function SellerSpaceLayout() {
                 to="vans"
                 style={({isActive}) => isActive ? activeStyle : null}
                 >
-                  Vans
+                  Sneakers
                   </NavLink>
                 <NavLink 
                 to="reviews"

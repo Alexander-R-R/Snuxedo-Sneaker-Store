@@ -347,3 +347,140 @@ i[class*="van-type-"] {
 .back-button li {
   text-decoration: none;
 }
+
+/* Seller Space Dashboard */
+
+.sellerSpace {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.sellerSpace-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.sellerSpace-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.sellerSpace-shoe-link-wrapper {
+  color: unset;
+  text-decoration: unset;
+}
+
+.sellerSpace-shoe-list {
+  padding-inline: 26px;
+}
+
+.sellerSpace-shoe-title {
+  padding-inline: 26px;
+}
+
+.sellerSpace-shoe-single {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
+}
+
+.sellerSpace-shoe-single > img {
+  height: 70px;
+  border-radius: 5px;
+  margin-right: 17px;
+}
+
+.sellerSpace-shoe-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 10px;
+}
+
+.sellerSpace-shoe-info p {
+  margin-block: 10px;
+}
+
+.sellerSpace-shoe-detail-layout-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+}
+
+.sellerSpace-shoe-detail {
+  display: flex;
+  align-items: center;
+}
+
+.sellerSpace-shoe-detail > img {
+  height: 160px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.sellerSpace-shoe-detail-info-text > h3 {
+  margin-top: 24px;
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.sellerSpace-shoe-detail-info-text > h4 {
+  font-size: 20px;
+  margin-block: 0;
+}
+
+.sellerSpace-shoe-detail-nav {
+  display: flex;
+  margin-block: 25px;
+}
+
+.sellerSpace-shoe-detail-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.sellerSpace-shoe-detail-nav a:first-of-type {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 15px;
+  margin-left: -15px;
+}
+
+.sellerSpace-shoe-detail-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.sellerSpace-shoe-detail-info > h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.sellerSpace-shoe-detail-info > h4 > span {
+  font-weight: 500;
+}
+
+.sellerSpace-shoe-price {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.sellerSpace-shoe-price > span {
+  font-size: 16px;
+  color: #4D4D4D;
+}
+
+.sellerSpace-shoe-detail-image {
+  height: 100px;
+  border-radius: 5px;
+}
