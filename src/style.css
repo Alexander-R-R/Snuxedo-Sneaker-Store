@@ -41,11 +41,18 @@ header .site-logo {
   font-size: 25px;
 }
 
+
 header a {
   text-decoration: none;
   color: white;
   font-weight: 600;
   padding: 5px 20px;
+}
+
+.login-link {
+  font-size: 20px;
+  
+  
 }
 
 header a:hover {
