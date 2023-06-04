@@ -6,7 +6,7 @@ export default function Home() {
     <div className="home-container">
         <h1>Snuxedo</h1>
         <p>Best sneaker marketplace in EU.</p>
-        <Link to="/sneakers">Find your sneakers</Link>
+        <Link to="sneakers">Find your sneakers</Link>
     </div>
     )
 }

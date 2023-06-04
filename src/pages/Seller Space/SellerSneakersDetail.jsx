@@ -6,16 +6,16 @@ import {
   Outlet,
   useLoaderData,
 } from "react-router-dom";
-import { getVan } from "../../api";
-import { requireAuth } from "../../utils";
+import { getShoe } from "../../api";
+
 
 export async function loader({ params, request }) {
-  await requireAuth(request);
-  return getVan(params.id);
+  await (request);
+  return getShoe(params.id);
 }
 
-export default function HostVansDetail() {
-  const currentVan = useLoaderData();
+export default function SellerSneakersDetail() {
+  const currentShoe = useLoaderData();
 
   const activeStyle = {
     fontWeight: "bold",
@@ -26,20 +26,20 @@ export default function HostVansDetail() {
   return (
     <section>
       <Link to=".." relative="path" className="back-button">
-        <span>Back to all vans</span>
+        <span>Back to your sneakers</span>
       </Link>
-      <div className="host-van-detail-layout-container">
-        <div className="host-van-detail">
-          <img src={currentVan.imageUrl} />
-          <div className="host-van-detail-info-text">
-            <i className={`van-type van-type-${currentVan.type}`}>
-              {currentVan.type}
+      <div className="sellerSpace-shoe-detail-layout-container">
+        <div className="sellerSpace-shoe-detail">
+          <img src={currentShoe.imageUrl} />
+          <div className="sellerSpace-shoe-detail-info-text">
+            <i className={`sellerSpace-type shoe-type-${currentShoe.type}`}>
+              {currentShoe.type}
             </i>
-            <h3>{currentVan.name}</h3>
-            <h4>${currentVan.price}/day</h4>
+            <h3>{currentShoe.name}</h3>
+            <h4>${currentShoe.price}/day</h4>
           </div>
         </div>
-        <nav className="host-van-detail-nav">
+        <nav className="sellerSpace-shoe-detail-nav">
           <NavLink
             to="."
             end
@@ -62,7 +62,7 @@ export default function HostVansDetail() {
             Photos
           </NavLink>
         </nav>
-        <Outlet context={{ currentVan }} />
+        <Outlet context={{ currentShoe }} />
       </div>
     </section>
   );

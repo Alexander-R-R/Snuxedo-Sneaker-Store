@@ -362,6 +362,10 @@ i[class*="van-type-"] {
   padding: 5px 20px;
 }
 
+.sellerSpace-nav {
+  margin: 20px;
+}
+
 .sellerSpace-nav a:hover {
   color: #161616;
   text-decoration: underline;

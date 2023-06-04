@@ -1,33 +1,33 @@
 import React from "react";
 import { Link, useLoaderData, Await, defer } from "react-router-dom";
-import { getHostVans } from "../../api";
+import { getHostShoes } from "../../api";
 import { requireAuth } from "../../utils";
 
 export async function loader({ request }) {
   await requireAuth(request)
-  return defer({ vans: getHostVans() })
+  return defer({ shoes: getHostShoes() })
 }
 
-export default function HostVans() {
+export default function SellerSneakers() {
   const dataPromise = useLoaderData();
 
-  function renderVanElements(vans) {
+  function renderShoeElements(shoes) {
 
-    const hostVansEls = vans.map((van) => (
-      <Link to={van.id} key={van.id} className="host-van-link-wrapper">
-        <div className="host-van-single" key={van.id}>
-          <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
-          <div className="host-van-info">
-            <h3>{van.name}</h3>
-            <p>${van.price}/day</p>
+    const sellerSneakersEls = shoes.map((shoe) => (
+      <Link to={shoe.id} key={shoe.id} className="sellerSpace-shoe-link-wrapper">
+        <div className="sellerSpace-shoe-single" key={shoe.id}>
+          <img src={shoe.imageUrl} alt={`Photo of ${shoe.name}`} />
+          <div className="sellerSpace-shoe-info">
+            <h3>{shoe.name}</h3>
+            <p>${shoe.price}/day</p>
           </div>
         </div>
       </Link>
     ))
     return (
-      <div className="host-vans-list">
+      <div className="sellerSpace-shoe-list">
         
-        <section>{hostVansEls}</section>
+        <section>{sellerSneakersEls}</section>
        
       </div>
     )
@@ -37,9 +37,9 @@ export default function HostVans() {
 
   return (
     <section>
-      <h1 className="host-vans-title">Your listed vans</h1>
+      <h1 className="sellerSpace-shoe-title">Your listed sneakers</h1>
       <React.Suspense fallback={<h2>Loading vans...</h2>}>
-        <Await resolve={dataPromise.vans}>{renderVanElements}</Await>
+        <Await resolve={dataPromise.shoes}>{renderShoeElements}</Await>
       </React.Suspense>
     </section>
   );

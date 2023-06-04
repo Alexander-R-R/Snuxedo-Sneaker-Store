@@ -53,7 +53,7 @@ export default function Dashboard() {
             <section className="sellerSpace-dashboard-vans">
                 <div className="top">
                     <h2>Your listed vans</h2>
-                    <Link to="vans">View all</Link>
+                    <Link to="sneakers">View all</Link>
                 </div>
                 <React.Suspense fallback={<h3>Loading...</h3>}>
                     <Await resolve={dataPromise.shoes}>{renderShoeElements}</Await>

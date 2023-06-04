@@ -25,7 +25,7 @@ export default function SellerSpaceLayout() {
                   Income
                 </NavLink>
                 <NavLink 
-                to="vans"
+                to="sneakers"
                 style={({isActive}) => isActive ? activeStyle : null}
                 >
                   Sneakers

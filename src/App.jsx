@@ -19,12 +19,16 @@ import SneakerDetails, {
 } from "./pages/Sneakers/SneakerDetails";
 import Income from "./pages/Seller Space/Income";
 import Reviews from "./pages/Seller Space/Reviews";
-import SellerSneakers from "./pages/Seller Space/SellerSneakers"
+import SellerSneakers, { loader as loaderSellerSneakers} from "./pages/Seller Space/SellerSneakers"
+import SellerSneakersDetail, {loader as loaderSellerSneakersDetail} from "./pages/Seller Space/SellerSneakersDetail"
+import SellerSneakersPricing from "./pages/Seller Space/SellerSneakersPricing";
+import SellerSneakersPhotos from "./pages/Seller Space/SellerSneakersPhotos";
+import SellerSneakersInfo from "./pages/Seller Space/SellerSneakersInfo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route path="/" element={<Home />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
       
         <Route 
         path="sneakers" 
@@ -45,51 +49,43 @@ const router = createBrowserRouter(
          <Route
           path="income"
           element={<Income />}
-          errorElement={<Error />}
+          errorElement
           loader={async ({ request }) => {
-            await requireAuth(request)
+            await (request)
             return null
           }}
         />
         <Route
           path="reviews"
           element={<Reviews />}
-          errorElement={<Error />}
+          errorElement
           loader={async ({ request }) => {
-            await requireAuth(request)
+            await (request)
             return null
           }}
         />
-        <Route path="vans" element={<SellerSneakers />} errorElement={<Error />} loader={loaderHostVans} />
+        <Route path="sneakers" element={<SellerSneakers />} errorElement loader={loaderSellerSneakers} />
 
         <Route
-          path="vans/:id"
-          element={<HostVanDetail />}
-          errorElement={<Error />}
-          loader={loaderHostVanDetail}
+          path="sneakers/:id"
+          element={<SellerSneakersDetail/>}
+          loader={loaderSellerSneakersDetail}
         >
           <Route 
             index 
-            element={<HostVanInfo />}
-            loader={async ({ request }) => {
-              await requireAuth(request)
-              return null
-            }}
+            element={<SellerSneakersInfo/>}
+            
           />
           <Route
               path="pricing" 
-              element={<HostVanPricing />} 
-              loader={async ({ request }) => {
-                await requireAuth(request)
-                return null
-              }}
+              element={<SellerSneakersPricing/>}
+              
+            
           />
           <Route
              path="photos" 
-             element={<HostVanPhotos />}
-             loader={async ({ request }) => {
-            return await requireAuth(request) || null
-            }}
+             element={<SellerSneakersPhotos/>}
+             
           />
           </Route>
 
