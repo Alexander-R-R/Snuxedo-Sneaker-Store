@@ -4,7 +4,7 @@ import { requireAuth } from "../../utils"
 import { getHostShoes } from "../../api"
 
 export async function loader({ request }) {
-    await requireAuth(request)
+    // await requireAuth(request)
     return defer({ shoes: getHostShoes() })
     
 }

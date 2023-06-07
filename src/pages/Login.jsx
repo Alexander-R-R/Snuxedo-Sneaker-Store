@@ -21,7 +21,6 @@ export async function action({ request }) {
   try {
     const data = await loginUser({ email, password })
     localStorage.setItem("loggedin", true )
-    console.log(pathname)
     return redirect(pathname)
   } catch(err) {
     return err.message
@@ -32,7 +31,7 @@ export default function Login() {
   const errorMessage = useActionData()
   const message = useLoaderData();
   const navigation = useNavigation()
-  console.log(navigation)
+  
   
 
 
