@@ -166,9 +166,13 @@ footer {
 }
 
 .shoe-tile {
-  border: 1px solid rgb(202, 202, 202);
-  border-radius: 5px;
+  border: 0.5px solid rgb(202, 202, 202);
   text-align: center;
+}
+
+.shoe-tile img {
+ max-width: 50%;
+ align-self: center;
 }
 
 .shoe-tile a {
@@ -180,7 +184,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  gap: 10px;
+  gap: 0px;
   margin-top: 5px;
   padding: 20px;
   background-color: white;
@@ -209,11 +213,10 @@ footer {
   height: 34px;
   margin-top: 20px;
   padding: 6px 26px;
-  font-style: italic;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
-  background-color: #cdf2fa;
+  font-family: Inter,georgia,sans-serif;
+  font-weight: 700;
+  border: 1px solid #EDEDED;
+  background-color: #EAEEF2;
   color: #4d4d4d;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -341,11 +344,10 @@ i[class*="van-type-"] {
   height: 34px;
   margin-top: 20px;
   padding: 6px 26px;
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
   border: none;
-  border-radius: 5px;
-  background-color: #cdf2fa;
+  background-color: #EAEEF2;
+  border: 1px solid #EDEDED;
   color: #4d4d4d;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -371,6 +373,11 @@ i[class*="van-type-"] {
 
 .sellerSpace-nav {
   margin: 20px;
+}
+
+.sellerSpace-nav a {
+  background-color: #EAEEF2;
+  border: 1px solid #EDEDED;
 }
 
 .sellerSpace-nav a:hover {
