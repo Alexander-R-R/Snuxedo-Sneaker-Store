@@ -65,7 +65,7 @@ export default function Sneakers() {
             className={`shoe-type air-jordan ${
               typeFilter === "" ? "selected" : ""
             }`}>
-              All Sneakers
+              ALL SNEAKERS
             </button>
             <button
               onClick={() => handleFilterChange("type", "Air Jordan")}
@@ -73,7 +73,7 @@ export default function Sneakers() {
                 typeFilter === "Air Jordan" ? "selected" : ""
               }`}
             >
-              Air Jordan
+              AIR JORDAN
             </button>
             <button
               onClick={() => handleFilterChange("type", "Nike")}
@@ -81,7 +81,7 @@ export default function Sneakers() {
                 typeFilter === "Nike" ? "selected" : ""
               }`}
             >
-              Nike
+              NIKE
             </button>
             <button
               onClick={() => handleFilterChange("type", "Yeezy")}
@@ -89,7 +89,7 @@ export default function Sneakers() {
                 typeFilter === "Yeezy" ? "selected" : ""
               }`}
             >
-              Yeezy
+              YEEZY
             </button>
             <button
               onClick={() => handleFilterChange("type", "Adidas")}
@@ -97,7 +97,7 @@ export default function Sneakers() {
                 typeFilter === "Adidas" ? "selected" : ""
               }`}
             >
-              Adidas
+              ADIDAS
             </button>
           </div>
           <div className="shoe-list">{shoesElements}</div>
