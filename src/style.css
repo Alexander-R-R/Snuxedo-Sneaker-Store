@@ -173,7 +173,7 @@ footer {
 }
 
 .shoe-tile img {
- max-width: 60%;
+ max-width: 90%;
  align-self: center;
 }
 
@@ -190,6 +190,14 @@ footer {
   margin-top: 5px;
   padding: 30px;
   background-color: white;
+}
+
+.sneaker-info {
+  font-family: "Roboto";
+}
+
+.sneaker-info p {
+  font-weight: 900;
 }
 
 /* .sneaker-filters a {
@@ -308,13 +316,11 @@ i[class*="van-type-"] {
 }
 
 .shoe-detail {
-  display: flex;
-  flex-direction: column;
   color: #161616;
 }
 
 .shoe-detail img {
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .shoe-detail h2 {
@@ -326,7 +332,7 @@ i[class*="van-type-"] {
 }
 
 .shoe-detail > i {
-  align-self: flex-start;
+  display: block;
   font-family: "Roboto";
   font-weight: 500;
 }
@@ -349,9 +355,17 @@ i[class*="van-type-"] {
 }
 
 .shoe-detail .link-button {
-  background-color: #FF8C38;
+  background-color: #1DAEF4;
   color: white;
   font-size: 1.125rem;
+  font-family: "Roboto";
+  font-weight: 900;
+  border: none;
+  margin: auto;
+  padding: 15px 15px 15px 15px;
+  border-radius: 5px;
+  
+  
 }
 
 

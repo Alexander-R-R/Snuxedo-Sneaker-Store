@@ -43,12 +43,13 @@ export default function Sneakers() {
         to={shoe.id}
         state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
           <img src={shoe.imageUrl} />
-          <div className="van-info">
-            <h3>{shoe.name}</h3>
+          <div className="sneaker-info">
             <p>
-              {shoe.price}
               <span>€</span>
+              {shoe.price}
             </p>
+            <span> {shoe.type} </span>
+            <h3>{shoe.name}</h3>
           </div>
           {/* <i className={`van-type ${shoe.type} selected`}>{shoe.type}</i> */}
         </Link>
